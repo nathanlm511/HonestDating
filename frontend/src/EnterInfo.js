@@ -1,7 +1,13 @@
 import './EnterInfo.css';
 import { Component } from 'react'
 
-const socials = ["instagram", "twitter", "spotify"];
+const socials = ["", "", "instagram", "instagram", "twitter", "spotify"];
+const texts = ["Enter your first name", 
+              "Enter your last name", 
+              "Enter your instagram username", 
+              "Enter your instagram password", 
+              "Enter your twitter handle", 
+              "Enter your spotify username"];
 
 class EnterInfo extends Component {
 
@@ -9,7 +15,7 @@ class EnterInfo extends Component {
     super();
     this.state = {
       index: 0,
-      values: ["", "", ""]
+      values: ["", "", "", "", "", ""]
     }
   }
 
@@ -19,6 +25,7 @@ class EnterInfo extends Component {
   
   handleNext = () => {
     this.setState({index: this.state.index + 1});
+    console.log(this.state.values);
   }
 
   handleDone = () => {
@@ -38,7 +45,7 @@ class EnterInfo extends Component {
           <div className="enter-info-container">
               <div className="info-input-container">
                 <div className={"info-logo " + socials[this.state.index]}></div>
-                <div className="info-text">Enter your {socials[this.state.index]} handle</div>
+                <div className="info-text">{texts[this.state.index]}</div>
                 <input className="info-input" value={this.state.values[this.state.index]} onChange={this.handleChange}></input>
               </div>
               <div className="enter-info-button-container">
@@ -49,7 +56,7 @@ class EnterInfo extends Component {
                     <div className="enter-info-button-clear"></div>
                   }
                   {
-                    this.state.index != 2 ?
+                    this.state.index != 5 ?
                     <div className="enter-info-button" onClick={this.handleNext}>Next</div>
                     :
                     <div className="enter-info-button" onClick={this.handleDone}>Done</div>
