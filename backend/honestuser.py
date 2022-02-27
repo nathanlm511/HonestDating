@@ -57,7 +57,6 @@ class HonestUser():
             "person", "pottedplant", "sheep", "sofa", "train"]
 
         instaData = self.iScraper.getUserImages()
-        print(instaData)
         instaPostInfo = []
         for postNum, instaPost in enumerate(instaData):
             if instaPost['is_video'] == True:
@@ -93,7 +92,9 @@ class HonestUser():
                 req = urllib.request.urlopen(photoInfo['url'])
                 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
                 image = cv.imdecode(arr, -1)
-                detected_objs = iDetector.detectObjects(image)
+                detected_objs, annotated_img = iDetector.detectObjects(image)
+                # cv.imshow("annotated", cv.resize(annotated_img, 640, 480))
+                # cv.waitKey()
                 interesting_photo = False
                 for obj in detected_objs:
                     if obj in interesting_objects:
