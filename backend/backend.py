@@ -19,9 +19,7 @@ def setup_connection(file_name):
     db = client.db
     users = db.users
 
-
 def example_user():
-    
     create_user("Rushia", "Uruha", "https://pbs.twimg.com/profile_images/1485036871826952192/rfqIJ2W0_400x400.jpg", 2000)
 
     create_spotify_info("Rushia", "Uruha", "uruharushia", "Anime")
@@ -80,7 +78,7 @@ def create_spotify_info(first_name, last_name, user, top_genre):
         }
     })
 
-def add_favorite_song(first_name, last_name, name, num_listens, energy):
+def add_favorite_song(first_name, last_name, name, album_url, energy):
     global users
 
     users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
@@ -88,13 +86,13 @@ def add_favorite_song(first_name, last_name, name, num_listens, energy):
         { "spotify.fav_song": 
             { 
                 "song": name,
-                "num_listens": num_listens, 
+                "album_url" : album_url,
                 "energy": energy
             }
         }
     })
 
-def add_top_recent_songs(first_name, last_name, song, num_listens, energy_level):
+def add_top_recent_songs(first_name, last_name, song, album_url, energy_level):
     global users
 
     users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
@@ -102,7 +100,7 @@ def add_top_recent_songs(first_name, last_name, song, num_listens, energy_level)
         { "spotify.top_recent_songs": 
             {
                 "song": song,
-                "num_listens" : num_listens,
+                "album_url" : album_url,
                 "energy_level" : energy_level
             }
         }
@@ -140,7 +138,7 @@ def create_user_twitter_info(first_name, last_name, twitter_handle):
     })
 
 
-def add_tweet_to_user(first_name, last_name, tweet, likes, retweets):
+def add_tweet_to_user(first_name, last_name, tweet):
     global users
 
     users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
@@ -148,9 +146,7 @@ def add_tweet_to_user(first_name, last_name, tweet, likes, retweets):
         {
             "twitter.tweets" : 
             {
-                "text" : tweet,
-                "likes" : likes,
-                "retweets" :retweets
+                "text" : tweet
             }
         }    
     })
@@ -191,7 +187,7 @@ def add_image_to_user(first_name, last_name, image_link, likes):
                 "file" : image_link,
                 "likes" : likes,
             }
-        }    
+        }
     })
 
 def add_video_to_user(first_name, last_name, video_link, likes):
