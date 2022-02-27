@@ -40,8 +40,10 @@ class EnterInfo extends Component {
     axios.post("http://localhost:5000/scrapeall", inputs)
       .then(res => {
         console.log(res.data);
+        window.localStorage.setItem("data", JSON.stringify(res.data));
+        window.location = "/profile";
       });
-    // window.location = "/profile";
+    // 
   }
   
   handleChange = (event) => {

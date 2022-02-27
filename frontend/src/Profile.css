@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 
 .profile-window {
     display: flex;
@@ -351,7 +352,8 @@
     border-radius: 5px;
     margin-top: 15px;
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
+    overflow: hidden;
 }
 
 .tweet-header-row {
@@ -426,25 +428,26 @@
 .twitter-number {
     font-size: 90px;
     font-family: 'Playfair Display', serif;
+    font-feature-settings: 'lnum', 'pnum';
     color: red;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -10px;
-    left: 40px;
+    top: 0px;
+    left: 50px;
 }
 
 .twitter-number-cir {
     background-color: lightsalmon;
-    height: 80px;
-    width: 80px;
-    border-radius: 80px;
+    height: 90px;
+    width: 90px;
+    border-radius: 90px;
 }
 
 .twitter-number-desc {
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .spotify-window {
@@ -510,7 +513,7 @@
 }
 
 .spotify-section-text {
-    font-size: 30px;
+    font-size: 29px;
     margin-left: 20px;
 }
 

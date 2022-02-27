@@ -10,6 +10,7 @@ class Profile extends Component {
     window.addEventListener("scroll", this.reveal_smaller);
     window.addEventListener("scroll", this.reveal_smallest);
     window.addEventListener("scroll", this.reveal_spotify);
+    this.test_json = JSON.parse(window.localStorage.getItem("data"));
   }
 
   reveal() {
@@ -86,11 +87,11 @@ class Profile extends Component {
     return (
       <div className="profile-window">
           <div className="profile-header"> 
-            <div className="profile-image"></div>
+            <img src={this.test_json.user_pfp.file} className="profile-image"></img>
             <div className="bio-container">
               <div className="bio-card">
-                <div className="bio-name">Taylor Swift</div>
-                <div className="bio">Hi! I am T Swiftie and I sing songs. (very well). I am blonde and am super countryyyyy. I am also very qiorky. Exes beware however because I will feture you in future songs.</div>
+                <div className="bio-name">{this.test_json.name.first + " " + this.test_json.name.last}</div>
+                <div className="bio">{this.test_json.twitter.tweets[0].text}</div>
                 <div className="tinder-button-container">
                   <div className="tinder-button green">
                     <div className="like-image"></div>
@@ -113,7 +114,7 @@ class Profile extends Component {
               <div className="instagram-card-header">A trip through time</div>
               <div className="instagram-card-container">
                 <div className="instagram-card-photo-container">
-                  <div className="instagram-card-photo"></div>
+                  <img src={this.test_json.insta.images[0].file} className="instagram-card-photo"></img>
                   <div className="instagram-card-subtitle">First post ever!</div>
                 </div>
                 <div className="instagram-card-photo-container">
@@ -154,7 +155,7 @@ class Profile extends Component {
                   <div className="tweet-sub-name">@MostLiked • 7m</div>
                 </div>
                 <div className="tweet-text">
-                  Yoinks I am a person :):):):)
+                  {this.test_json.twitter.tweets[0].text}
                 </div>
               </div>
               <div className="tweet tweet-2">
@@ -164,7 +165,7 @@ class Profile extends Component {
                   <div className="tweet-sub-name">@RandomTweet • 2d</div>
                 </div>
                 <div className="tweet-text">
-                  Hey I am a person :):):):)
+                  {this.test_json.twitter.tweets[1].text}
                 </div>
               </div>
               <div className="tweet tweet-3">
@@ -174,7 +175,7 @@ class Profile extends Component {
                   <div className="tweet-sub-name">@RandomTweet • 3h</div>
                 </div>
                 <div className="tweet-text">
-                  Bye I am a person :):):):)
+                  {this.test_json.twitter.tweets[2].text}
                 </div>
               </div>
               <div className="tweet tweet-4">
@@ -184,7 +185,7 @@ class Profile extends Component {
                   <div className="tweet-sub-name">@RandomTweet • 46m</div>
                 </div>
                 <div className="tweet-text">
-                  Why I am a person :):):):)
+                  {this.test_json.twitter.tweets[3].text}
                 </div>
               </div>
               <div className="tweet tweet-5">
@@ -194,29 +195,29 @@ class Profile extends Component {
                   <div className="tweet-sub-name">@FirstTweet • 131d</div>
                 </div>
                 <div className="tweet-text">
-                  Sheesh I am a person :):):):)
+                  {this.test_json.twitter.tweets[4].text}
                 </div>
               </div>
               <div className="twitter-text"></div>
             </div>
             <div className="twitter-num-container">
               <div className="twitter-data-container">
-                <div className="twitter-number">4</div>
+                <div className="twitter-number">85</div>
                 <div className="twitter-number-cir"></div>
                 <div className="twitter-number-desc">Twitter friends</div>
               </div>
               <div className="twitter-data-container jag">
-                <div className="twitter-number">4</div>
+                <div className="twitter-number">13</div>
                 <div className="twitter-number-cir"></div>
                 <div className="twitter-number-desc">Retweets</div>
               </div>
               <div className="twitter-data-container">
-                <div className="twitter-number">4</div>
+                <div className="twitter-number">90</div>
                 <div className="twitter-number-cir"></div>
                 <div className="twitter-number-desc">Likes on most-liked post</div>
               </div>
               <div className="twitter-data-container jag">
-                <div className="twitter-number">4</div>
+                <div className="twitter-number">5</div>
                 <div className="twitter-number-cir"></div>
                 <div className="twitter-number-desc">Total tweets</div>
               </div>
@@ -228,53 +229,55 @@ class Profile extends Component {
             <div className="spotify-header">Musical Personality</div>
             <div className="spotify-container">
               <div className="spotify-column">
-                <div className="spotify-section-header">Favorite Song</div>
+                <div className="spotify-section-header">Favorite Songs</div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_recent_songs[0].album_url} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_recent_songs[0].song}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_recent_songs[1].album_url} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_recent_songs[1].song}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_recent_songs[2].album_url} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_recent_songs[2].song}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_recent_songs[3].album_url} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_recent_songs[3].song}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_recent_songs[4].album_url} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_recent_songs[4].song}</div>
                 </div>
               </div>
               <div className="spotify-column jig">
                 <div className="spotify-section-header">Favorite Artists</div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_artists[0].num_listens} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_artists[0].artist}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_artists[1].num_listens} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_artists[1].artist}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_artists[2].num_listens} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_artists[2].artist}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_artists[3].num_listens} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_artists[3].artist}</div>
                 </div>
                 <div className="spotify-section-container reveal-spotify">
-                  <div className="spotify-section-image"></div>
-                  <div className="spotify-section-text">Heatwaves</div>
+                  <img src={this.test_json.spotify.top_artists[4].num_listens} className="spotify-section-image"></img>
+                  <div className="spotify-section-text">{this.test_json.spotify.top_artists[4].artist}</div>
                 </div>
               </div>
+                {/*
               <div className="spotify-column-center">
                 <div className="spotify-section-header left">Musical Energy</div>
+                commented out because its ugly lol
                 <div className="energy-bar">
                   <div className="energy-bar-empty" style={{height: 50 + "%"}}></div>
                   <div className="energy-bar-green" style={{height: 50 + "%"}}>
@@ -282,6 +285,7 @@ class Profile extends Component {
                   </div>
                 </div>
               </div>
+                */}
             </div>
           </div>
       </div>
