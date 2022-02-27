@@ -53,3 +53,6 @@ def scrapeSpotify(userID):
     backend.add_favorite_song(usr.firstName, usr.lastName, topSongAllTime['songname'], topSongAllTime['imageurl'])
 
     return backend.get_spotify_json(usr.firstName, usr.lastName)
+
+    
+app.run()
