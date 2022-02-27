@@ -90,7 +90,7 @@ class HonestUser():
                     photoInfo['url'] = instaPost['display_url']
                 photoInfo['mediaType'] = 'photo'
                 photo_name = 'insta_photo' + str(postNum) + '.jpg'
-                req = urllib.urlopen(photoInfo['url'])
+                req = urllib.request.urlopen(photoInfo['url'])
                 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
                 image = cv.imdecode(arr, -1)
                 detected_objs = iDetector.detectObjects(image)
