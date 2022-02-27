@@ -219,5 +219,5 @@ def get_insta_files_from_user(first_name, last_name, file_type):
     
     return dumps(image_names)
 
-setup_connection("connection.txt")
-example_user()
+#setup_connection("connection.txt")
+#example_user()
