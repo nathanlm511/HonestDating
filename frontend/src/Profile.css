@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.profile-window {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    background-color: aliceblue;
+    font-family: 'Crimson Pro', serif;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.profile-image {
+    height: 100%;
+    width: 60%;
+    background-image: url('./images/taylor-swift.jpg');
+    background-size: cover;
+    border-radius: 0px 0px 1000px 0px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+}
+
+.bio-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+}
+
+.bio-tag {
+    font-family: 'Archivo Narrow', sans-serif;
+    color: red;
+}
+
+.bio-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: rgb(5, 5, 85);
+}
+
+.bio {
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: darkblue;
+    font-family: 'Crimson Pro', serif;
+    padding-right: 30px;
+}
+
+.tinder-button-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+    right: 50px;
+}
+
+.tinder-button {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tinder-button:hover {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: rgb(255, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-image {
+    height: 60%;
+    width: 60%;
+    background-image: url('./images/like.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+.dislike-image {
+    height: 70%;
+    width: 70%;
+    background-image: url('./images/dislike.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: -2px;
+}
+
+.green {
+    border: 5px solid #68dc9c
+}
+
+.red {
+    border: 5px solid #fc4c3c
+}
+
+.tinder-button-spacer {
+    width: 100px;
+}
+
+.page-spacer {
+    height: 0vh;
+    width: 100vw;
+}
+
+.instagram-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 75%;
+    height: 80%;
+    border-radius: 200px 0px 0px 200px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.reveal {
+    transform: translateX(800px);
+    opacity: 0;
+    transition: 3s all ease;
+}
+
+.reveal-small {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal-smaller {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal-smallest {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 3s all ease;
+}
+
+.reveal-spotify {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal-small.active-small {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal-smaller.active-smaller {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal-smallest.active-smallest {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.reveal-spotify.active-spotify {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.instagram-card-header {
+    color: darkblue;
+    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+    margin-top: 40px;
+}
+
+.instagram-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.instagram-card-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-card-photo {
+    height: 250px;
+    width: 250px;
+    background-image: url('./images/taylor-swift.jpg');
+    background-size: cover; 
+    border-radius: 10px;   
+}
+
+.instagram-card-subtitle {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.instagram-logo-container {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-logo {
+    background-image: url('./images/instagram.png');
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.instagram-description {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.random-window {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-header-row {
+    width: 100%;
+    padding-left: 150px;
+}
+
+.random-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: darkblue;
+}
+
+.random-subheader {
+    font-size: 20px;
+}
+
+.random-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-top: 70px;
+}
+
+.random-photo {
+    background-image: url('./images/taylor-swift.jpg');
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;   
+    position: relative;
+    z-index: 1;
+}
+
+.random-square {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;  
+    z-index: 0;
+    background-color: lightpink;
+    position: relative;
+    top: -230px;
+    left: 20px;
+}
+
+.jig {
+    position: relative;
+    top: 30px;
+}
+
+.jag {
+    position: relative;
+    left: 30px;
+}
+
+.twitter-window {
+    background-color: white;
+    width: 100vw;
+    height: 110vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.twitter-text-container {
+    display: flex;
+    flex-direction: column; 
+    width: 55%;
+    align-items: center;
+}
+
+.twitter-text-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: darkblue;
+    margin-top: 50px;
+}
+
+.tweet {
+    height: 80px;
+    width: 350px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.tweet-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tweet-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tweet-verified {
+    height: 10px;
+    width: 10px;
+    background-image: url('./images/verified.svg');
+    background-size: cover;
+    margin-left: 4px;
+}
+
+.tweet-sub-name {
+    color: grey;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.tweet-text {
+    margin-top: 1px;
+}
+
+.tweet-1 {
+    position: relative;
+    background-color: rgb(250, 216, 216);
+    left: 50px;
+    margin-top: 30px;
+}
+.tweet-2 {
+    position: relative;
+    background-color: rgb(197, 228, 197);
+    left: -70px;
+}
+.tweet-3 {
+    position: relative;
+    background-color: rgb(191, 213, 221);
+    left: 90px;
+}
+.tweet-4 {
+    position: relative;
+    background-color: rgb(202, 206, 168);
+    left: -120px;
+}
+.tweet-5 {
+    position: relative;
+    background-color: rgb(219, 191, 218);
+    left: -10px;
+}
+
+.twitter-num-container {
+    display: flex;
+    flex-direction: column; 
+    width: 45%;
+    justify-content: center;
+}
+
+.twitter-data-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.twitter-number {
+    font-size: 90px;
+    font-family: 'Playfair Display', serif;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -10px;
+    left: 40px;
+}
+
+.twitter-number-cir {
+    background-color: lightsalmon;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+}
+
+.twitter-number-desc {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.spotify-window {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e0efe3;
+    display: flex;
+    flex-direction: column;
+}
+
+.wave {
+    background-color: white;
+    margin-top: -100px;
+}
+
+.spotify-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    color: darkblue;
+    margin-left: 100px;
+    margin-top: -50px;
+}
+
+.spotify-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 150px;
+    margin-top: 50px;
+}
+
+.spotify-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.spotify-column-center {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    align-items: center;
+}
+
+.spotify-section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: darkblue;
+    margin-top: 20px;
+}
+
+.spotify-section-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.spotify-section-image {
+    height: 75px;
+    width: 75px;
+    background-image: url('./images/taylor-swift.jpg');
+    background-size: cover;
+}
+
+.spotify-section-text {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.spotify-logo {
+    background-image: url('./images/spotify.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vh;
+    position: absolute;
+    top: 420vh;
+    left: 75vw;
+    z-index: 0;
+}
+
+.energy-bar {
+    height: 500px;
+    width: 100px;
+    background-color: rgb(252, 255, 251);
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.energy-bar-green {
+    background-color: darkgreen;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
+
+.bar-percentage {
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.left {
+    margin-left: 15px;
+}
