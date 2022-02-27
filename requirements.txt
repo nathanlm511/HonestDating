@@ -1,3 +1,10 @@
+Flask==2.0.3
+flask_cors==3.0.10
+instagram_scraper==1.10.6
+numpy==1.22.2
+opencv_python==4.5.5.62
 pandas==1.4.1
-twint==2.1.20
-twint.egg==info
+Pillow==9.0.1
+pymongo==4.0.1
+spotipy==2.19.0
+twint==2.1.21

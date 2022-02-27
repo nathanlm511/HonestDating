@@ -19,6 +19,7 @@ def home():
 def createUser(userID, firstname, lastname, twitterHandle, instaUsername, instaPassword):
     usr = honestuser.HonestUser(userID, firstName=firstname, lastName=lastname, twitterUser=twitterHandle, instaUser=instaUsername, instaPass=instaPassword)
     users[userID] = usr
+    backend.setup_connection('../connection.txt')
     return json.dumps(usr)
 
 @app.route('/scrapetwitter')
