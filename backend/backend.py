@@ -45,7 +45,7 @@ def create_user(first_name, last_name, user_img_link, age):
             "last": last_name 
         },
         "age": age,
-        "user_pfp" : user_img_link,
+        "user_pfp" : {},
         "twitter": {},
         "insta": {},
         "spotify": {}
@@ -78,7 +78,7 @@ def create_spotify_info(first_name, last_name, user, top_genre):
         }
     })
 
-def add_favorite_song(first_name, last_name, name, album_url, energy):
+def add_favorite_song(first_name, last_name, name, album_url):
     global users
 
     users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
@@ -87,7 +87,6 @@ def add_favorite_song(first_name, last_name, name, album_url, energy):
             { 
                 "song": name,
                 "album_url" : album_url,
-                "energy": energy
             }
         }
     })
@@ -176,7 +175,7 @@ def create_user_instagram_info(first_name, last_name, user):
         }
     })
 
-def add_image_to_user(first_name, last_name, image_link, likes):
+def add_image_to_user(first_name, last_name, image_link):
     global users
 
     users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
@@ -185,10 +184,23 @@ def add_image_to_user(first_name, last_name, image_link, likes):
             "insta.images" : 
             {
                 "file" : image_link,
-                "likes" : likes,
             }
         }
     })
+
+def add_pfp_to_user(first_name, last_name, image_link):
+    global users
+
+    users.find_one_and_update({"name" : {"first" : first_name, "last" : last_name}}, 
+    {"$set" : 
+        {
+            "user_pfp" : 
+            {
+                "file" : image_link,
+            }
+        }
+    })
+
 
 def add_video_to_user(first_name, last_name, video_link, likes):
     global users
