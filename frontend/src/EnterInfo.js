@@ -1,5 +1,6 @@
 import './EnterInfo.css';
 import { Component } from 'react'
+import axios from 'axios';
 
 const socials = ["", "", "instagram", "instagram", "twitter", "spotify"];
 const texts = ["Enter your first name", 
@@ -29,7 +30,18 @@ class EnterInfo extends Component {
   }
 
   handleDone = () => {
-    window.location = "/profile";
+    const inputs = {
+      firstname: this.state.values[0],
+      lastname: this.state.values[1],
+      twitterHandle: this.state.values[2],
+      instauser: this.state.values[3],
+      instspass: this.state.values[4]
+    }
+    axios.post("http://localhost:5000/scrapeall", inputs)
+      .then(res => {
+        console.log(res.data);
+      });
+    // window.location = "/profile";
   }
   
   handleChange = (event) => {
